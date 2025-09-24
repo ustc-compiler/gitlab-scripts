@@ -4,6 +4,8 @@ import sys
 import gitlab
 from gitlab import const, exceptions
 import pandas as pd
+from dotenv import load_dotenv
+
 
 
 def invite_users_to_group(gl: gitlab.Gitlab, group_name: str, user_ids: List[int], access_level=const.AccessLevel.DEVELOPER):
@@ -33,6 +35,7 @@ def invite_users_to_group(gl: gitlab.Gitlab, group_name: str, user_ids: List[int
 
 
 if __name__ == "__main__":
+    load_dotenv()
     token = os.getenv("GITLAB_TOKEN")
     if not token:
         print("❌ Please provide private token via GITLAB_TOKEN env var")
