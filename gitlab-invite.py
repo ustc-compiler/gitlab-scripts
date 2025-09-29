@@ -36,9 +36,9 @@ def invite_users_to_group(gl: gitlab.Gitlab, group_name: str, user_ids: List[int
 
 if __name__ == "__main__":
     load_dotenv()
-    token = os.getenv("GITLAB_TOKEN")
+    token = os.getenv("GITLAB_PERSONAL_ACCESS_TOKEN")
     if not token:
-        print("❌ Please provide private token via GITLAB_TOKEN env var")
+        print("❌ Please provide private token via GITLAB_PERSONAL_ACCESS_TOKEN env var")
         sys.exit(1)
 
     url = os.getenv("GITLAB_URL", "https://git.lug.ustc.edu.cn/")

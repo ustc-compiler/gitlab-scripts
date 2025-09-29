@@ -2,3 +2,5 @@
 .vscode
 uid.csv
 .env
+__pycache__
+
